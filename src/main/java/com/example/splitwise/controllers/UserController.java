@@ -4,8 +4,6 @@ import com.example.splitwise.models.User;
 import com.example.splitwise.repositories.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.function.Supplier;
-
 @RestController
 @RequestMapping(path = "/user")
 public class UserController {
