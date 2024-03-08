@@ -3,7 +3,7 @@ package com.example.splitwise.controllers;
 
 import com.example.splitwise.models.Expense;
 import com.example.splitwise.services.SettleUp;
-import com.example.splitwise.stratergy.SettleUpStartergy;
+import com.example.splitwise.stratergy.SettleUpStrategy;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
