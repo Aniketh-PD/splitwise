@@ -8,7 +8,6 @@ import java.util.*;
 
 public class SettleUpStrategy {
     public static List<Expense> settleUp(List<Expense> expensesList){
-        System.out.println(expensesList);
 
         Map<User,Double> userAmount = new HashMap<>();
         for(Expense expense:expensesList){
@@ -40,6 +39,7 @@ public class SettleUpStrategy {
                 owedByHeap.add(new ExpenseUser(entry.getKey(), -1 * entry.getValue()));
             }
         }
+
         /*
         * if cond owed user amt is getting paid by the owed user to the paid user hence paid user owes that much amt
         * */

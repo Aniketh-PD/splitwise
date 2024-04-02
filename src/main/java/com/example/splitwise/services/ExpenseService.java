@@ -6,6 +6,7 @@ import com.example.splitwise.models.ExpenseUser;
 import com.example.splitwise.models.User;
 import com.example.splitwise.repositories.ExpenseRepository;
 import com.example.splitwise.repositories.ExpenseUserRepository;
+import com.example.splitwise.repositories.GroupRepository;
 import com.example.splitwise.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -19,11 +20,13 @@ public class ExpenseService {
     private final UserRepository userRepository;
     private final ExpenseRepository expenseRepository;
     private final ExpenseUserRepository expenseUserRepository;
+    private final GroupRepository groupRepository;
 
-    public ExpenseService(UserRepository userRepository, ExpenseRepository expenseRepository, ExpenseUserRepository expenseUserRepository) {
+    public ExpenseService(UserRepository userRepository, ExpenseRepository expenseRepository, ExpenseUserRepository expenseUserRepository,GroupRepository groupRepository) {
         this.userRepository = userRepository;
         this.expenseRepository = expenseRepository;
         this.expenseUserRepository = expenseUserRepository;
+        this.groupRepository = groupRepository;
     }
 
 
@@ -51,6 +54,7 @@ public class ExpenseService {
 
         Expense expense = Expense.builder()
                                 .name(request.getName())
+                                .group(groupRepository.findByName(request.getGroupName()).get())
                                 .type(request.getExpenseType())
                                 .totalAmount(request.getAmount())
                                 .paidBy(paidByList)

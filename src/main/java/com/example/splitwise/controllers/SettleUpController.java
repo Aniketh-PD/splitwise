@@ -23,10 +23,13 @@ public class SettleUpController {
 
 
 
-    @GetMapping(path="/{groupId}")
+    @GetMapping(path="/group/{groupId}")
     public List<Expense> settleUpGroup(@PathVariable(name = "groupId") Long groupId){
-        //call the service Layer class
-        settleUp.settleUpGroup(groupId);
-        return null;
+        return settleUp.settleUpGroup(groupId);
+    }
+
+    @GetMapping(path = "/{groupId}/user/{userId}")
+    public List<Expense> settleUpGroupForUser(@PathVariable(name="groupId")Long groupId,@PathVariable(name="userId")Long userId){
+        return settleUp.settleUpUserInaGroup(groupId,userId);
     }
 }

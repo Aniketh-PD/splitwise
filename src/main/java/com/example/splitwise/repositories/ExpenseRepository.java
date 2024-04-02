@@ -7,6 +7,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ExpenseRepository extends JpaRepository<Expense,Long> {
-    Optional<List<Expense>> findByGroupId(Long GroupId);
 
 }

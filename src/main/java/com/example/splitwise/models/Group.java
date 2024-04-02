@@ -1,20 +1,20 @@
 package com.example.splitwise.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
+@Getter
+@Setter
 @Entity(name = "splitwise_group")
-@Data
 public class Group extends BaseModel{
 
     private String name;
     private boolean isSimplifiedDebtOn;
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<User> users;
     @OneToMany(mappedBy = "group")
     List<Expense> expenses;
