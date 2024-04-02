@@ -1,5 +1,4 @@
 # Backend api endpoints for Splitwise application
-## developed using Java spring boot frame work
 
 ### About
 - replicated key features found in the Splitwise application, including the ability to create new expenses, retrieve user information, and facilitate group settlement functionality.
